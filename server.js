@@ -12,7 +12,11 @@ import EmailSender from "./sendEmail.js";
 // import products from "./data/Products.js";
 // import types from "./data/Types.js";
 
-
+     PORT = 5000
+    NODE_ENV = developement
+    JWT_SECRET = Shoeshop
+    CLIENT_ID  = danish
+    MONGO_URL = mongodb+srv://bizadmin:Techguru1234@biztech.rymsd3y.mongodb.net/Orion
 
 
 dotenv.config();
