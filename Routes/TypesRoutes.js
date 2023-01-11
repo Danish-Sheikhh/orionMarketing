@@ -21,7 +21,7 @@ typeRoute.get(
           },
         },
         {
-          category: {
+          title: {
             $regex: req.query.keyword,
             $options: 'i',
           },
