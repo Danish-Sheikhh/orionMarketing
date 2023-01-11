@@ -17,6 +17,10 @@ typeRoute.get(
             $regex: req.query.keyword,
             $options: "i",
           },
+         title: {
+            $regex: req.query.keyword,
+            $options: "i",
+          },
         }
       : {};
     const count = await Type.countDocuments({ ...keyword });
