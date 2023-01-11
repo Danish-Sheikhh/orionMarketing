@@ -11,18 +11,24 @@ typeRoute.get(
   asyncHandler(async (req, res) => {
     const pageSize = 12;
     const page = Number(req.query.pageNumber) || 1;
-    const keyword = req.query.keyword
-      ? {
+  const keyword = req.query.keyword
+  ? {
+      $or: [
+        {
           name: {
             $regex: req.query.keyword,
-            $options: "i",
+            $options: 'i',
           },
-         title: {
+        },
+        {
+          category: {
             $regex: req.query.keyword,
-            $options: "i",
+            $options: 'i',
           },
-        }
-      : {};
+        },
+      ],
+    }
+  : {};
     const count = await Type.countDocuments({ ...keyword });
     const types = await Type.find({ ...keyword })
       .limit(pageSize)
