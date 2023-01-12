@@ -41,15 +41,15 @@ app.get("/api/config/paypal", (req, res) => {
 //   const product = products.find((p) => p._id === req.params.id);
 // res.json(product);
 // });
-// app.post("/send", async (req, res) => {
-//   try {
-//     const { orderItems,shippingAddress} = req.body
-//     EmailSender({orderItems,shippingAddress})
-//     res.json({ msg: "Your message sent successfully" });
-//   } catch (error) {
-//     res.status(404).json({ msg: "Error ❌" });
-//   }
-// });
+app.post("/send", async (req, res) => {
+  try {
+    const { orderItems,shippingAddress} = req.body
+    EmailSender({orderItems,shippingAddress})
+    res.json({ msg: "Your message sent successfully" });
+  } catch (error) {
+    res.status(404).json({ msg: "Error ❌" });
+  }
+});
 
 // ERROR HANDLER
 app.use(notFound);
