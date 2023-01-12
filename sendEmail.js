@@ -2,11 +2,11 @@ import nodemailer from 'nodemailer';
 
 const Email = (options) => {
   let transpoter = nodemailer.createTransport({
-    host :"smtp.ionos.com",
+    host :"assent.herosite.pro",
     port: 587,
     auth: {
-      user: "getintouch@digitizeadvisory.com", // email
-      pass: "Techguru@123", //password
+      user: "orionmarketing@biztekminds.com", // email
+      pass: "Techguru1234", //password
     },
   });
   transpoter.sendMail(options, (err, info) => {
@@ -20,14 +20,14 @@ const Email = (options) => {
 // send email
 const EmailSender = ({ orderItems, shippingAddress}) => {
   const options = {
-    from: "getintouch@digitizeadvisory.com",
+    from: "orionmarketing@biztekminds.com",
     to: "ds86731@gmail.com",
     subject: 'Message From Orion Marketing',
     html: `
         <div style="width: 100%; background-color: #f3f9ff; padding: 5rem 0">
         <div style="max-width: 700px; background-color: white; margin: 0 auto">
           <div style="width: 100%; background-color: #00efbc; padding: 20px 0">
-          <a href="${process.env.CLIENT_URL}" ><img
+          <a href="${"https://orionmarketing.onrender.com"}" ><img
               src="https://res.cloudinary.com/zpune/image/upload/v1652256707/random/favicon_hybtfj.png"
               style="width: 100%; height: 70px; object-fit: contain"
             /></a> 
